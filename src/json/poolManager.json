@@ -1,0 +1,961 @@
+[
+	{
+		"type": "event",
+		"name": "ContributionUpdated",
+		"inputs": [
+			{
+				"type": "uint256",
+				"name": "totalParticipations",
+				"internalType": "uint256",
+				"indexed": false
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "OwnershipTransferred",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "previousOwner",
+				"internalType": "address",
+				"indexed": true
+			},
+			{
+				"type": "address",
+				"name": "newOwner",
+				"internalType": "address",
+				"indexed": true
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "PoolForTokenRemoved",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "token",
+				"internalType": "address",
+				"indexed": true
+			},
+			{
+				"type": "address",
+				"name": "pool",
+				"internalType": "address",
+				"indexed": false
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "TvlChanged",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "currency",
+				"internalType": "address",
+				"indexed": false
+			},
+			{
+				"type": "uint256",
+				"name": "totalLocked",
+				"internalType": "uint256",
+				"indexed": false
+			},
+			{
+				"type": "uint256",
+				"name": "totalRaised",
+				"internalType": "uint256",
+				"indexed": false
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "sender",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "sender",
+				"internalType": "address",
+				"indexed": false
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		],
+		"name": "WETH",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "addAdminPoolFactory",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "factory",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "addPoolFactories",
+		"inputs": [
+			{
+				"type": "address[]",
+				"name": "factories",
+				"internalType": "address[]"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "addPoolFactory",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "factory",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "addTopPool",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "poolAddress",
+				"internalType": "address"
+			},
+			{
+				"type": "address",
+				"name": "currency",
+				"internalType": "address"
+			},
+			{
+				"type": "uint256",
+				"name": "raisedAmount",
+				"internalType": "uint256"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "decreaseTotalValueLocked",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "currency",
+				"internalType": "address"
+			},
+			{
+				"type": "uint256",
+				"name": "value",
+				"internalType": "uint256"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "ethLiquidity",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "_reciever",
+				"internalType": "address payable"
+			},
+			{
+				"type": "uint256",
+				"name": "_amount",
+				"internalType": "uint256"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "contract IPancakePair"
+			}
+		],
+		"name": "ethUSDTPool",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address[]",
+				"name": "",
+				"internalType": "address[]"
+			}
+		],
+		"name": "getAllContributedPools",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "user",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address[]",
+				"name": "",
+				"internalType": "address[]"
+			}
+		],
+		"name": "getAllPools",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		],
+		"name": "getContributedPoolAtIndex",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "user",
+				"internalType": "address"
+			},
+			{
+				"type": "uint256",
+				"name": "index",
+				"internalType": "uint256"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "tuple[]",
+				"name": "",
+				"internalType": "struct PoolManager.CumulativeLockInfo[]",
+				"components": [
+					{
+						"type": "address",
+						"name": "poolAddress",
+						"internalType": "address"
+					},
+					{
+						"type": "address",
+						"name": "token",
+						"internalType": "address"
+					},
+					{
+						"type": "address",
+						"name": "currency",
+						"internalType": "address"
+					},
+					{
+						"type": "uint8",
+						"name": "poolState",
+						"internalType": "uint8"
+					},
+					{
+						"type": "uint8",
+						"name": "poolType",
+						"internalType": "uint8"
+					},
+					{
+						"type": "uint8",
+						"name": "decimals",
+						"internalType": "uint8"
+					},
+					{
+						"type": "uint256",
+						"name": "startTime",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "endTime",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "totalRaised",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "hardCap",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "softCap",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "minContribution",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "maxContribution",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "rate",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "liquidityListingRate",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "liquidityPercent",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "liquidityUnlockTime",
+						"internalType": "uint256"
+					},
+					{
+						"type": "string",
+						"name": "name",
+						"internalType": "string"
+					},
+					{
+						"type": "string",
+						"name": "symbol",
+						"internalType": "string"
+					},
+					{
+						"type": "string",
+						"name": "poolDetails",
+						"internalType": "string"
+					}
+				]
+			}
+		],
+		"name": "getCumulativePoolInfo",
+		"inputs": [
+			{
+				"type": "uint256",
+				"name": "start",
+				"internalType": "uint256"
+			},
+			{
+				"type": "uint256",
+				"name": "end",
+				"internalType": "uint256"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "getETHPrice",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		],
+		"name": "getPoolAt",
+		"inputs": [
+			{
+				"type": "uint256",
+				"name": "index",
+				"internalType": "uint256"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		],
+		"name": "getPoolAt",
+		"inputs": [
+			{
+				"type": "uint8",
+				"name": "version",
+				"internalType": "uint8"
+			},
+			{
+				"type": "uint256",
+				"name": "index",
+				"internalType": "uint256"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address[]",
+				"name": "",
+				"internalType": "address[]"
+			}
+		],
+		"name": "getPoolsOf",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "owner",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "tuple[]",
+				"name": "",
+				"internalType": "struct PoolManager.TopPoolInfo[]",
+				"components": [
+					{
+						"type": "uint256",
+						"name": "totalRaised",
+						"internalType": "uint256"
+					},
+					{
+						"type": "address",
+						"name": "poolAddress",
+						"internalType": "address"
+					}
+				]
+			}
+		],
+		"name": "getTopPool",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "getTotalNumberOfContributedPools",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "user",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "getTotalNumberOfPools",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "getTotalNumberOfPools",
+		"inputs": [
+			{
+				"type": "uint8",
+				"name": "version",
+				"internalType": "uint8"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "tuple[]",
+				"name": "",
+				"internalType": "struct PoolManager.CumulativeLockInfo[]",
+				"components": [
+					{
+						"type": "address",
+						"name": "poolAddress",
+						"internalType": "address"
+					},
+					{
+						"type": "address",
+						"name": "token",
+						"internalType": "address"
+					},
+					{
+						"type": "address",
+						"name": "currency",
+						"internalType": "address"
+					},
+					{
+						"type": "uint8",
+						"name": "poolState",
+						"internalType": "uint8"
+					},
+					{
+						"type": "uint8",
+						"name": "poolType",
+						"internalType": "uint8"
+					},
+					{
+						"type": "uint8",
+						"name": "decimals",
+						"internalType": "uint8"
+					},
+					{
+						"type": "uint256",
+						"name": "startTime",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "endTime",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "totalRaised",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "hardCap",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "softCap",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "minContribution",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "maxContribution",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "rate",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "liquidityListingRate",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "liquidityPercent",
+						"internalType": "uint256"
+					},
+					{
+						"type": "uint256",
+						"name": "liquidityUnlockTime",
+						"internalType": "uint256"
+					},
+					{
+						"type": "string",
+						"name": "name",
+						"internalType": "string"
+					},
+					{
+						"type": "string",
+						"name": "symbol",
+						"internalType": "string"
+					},
+					{
+						"type": "string",
+						"name": "poolDetails",
+						"internalType": "string"
+					}
+				]
+			}
+		],
+		"name": "getUserContributedPoolInfo",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "userAddress",
+				"internalType": "address"
+			},
+			{
+				"type": "uint256",
+				"name": "start",
+				"internalType": "uint256"
+			},
+			{
+				"type": "uint256",
+				"name": "end",
+				"internalType": "uint256"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "increaseTotalValueLocked",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "currency",
+				"internalType": "address"
+			},
+			{
+				"type": "uint256",
+				"name": "value",
+				"internalType": "uint256"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "initialize",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "_WETH",
+				"internalType": "address"
+			},
+			{
+				"type": "address",
+				"name": "_ethUSDTPool",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "initializeTopPools",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "bool",
+				"name": "",
+				"internalType": "bool"
+			}
+		],
+		"name": "isPoolGenerated",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "pool",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		],
+		"name": "owner",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		],
+		"name": "poolForToken",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "token",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "recordContribution",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "user",
+				"internalType": "address"
+			},
+			{
+				"type": "address",
+				"name": "pool",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "registerPool",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "pool",
+				"internalType": "address"
+			},
+			{
+				"type": "address",
+				"name": "token",
+				"internalType": "address"
+			},
+			{
+				"type": "address",
+				"name": "owner",
+				"internalType": "address"
+			},
+			{
+				"type": "uint8",
+				"name": "version",
+				"internalType": "uint8"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "removePoolFactory",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "factory",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "removePoolForToken",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "token",
+				"internalType": "address"
+			},
+			{
+				"type": "address",
+				"name": "pool",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "removeTopPool",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "poolAddress",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "renounceOwnership",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "totalLiquidityRaised",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "totalParticipants",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "totalValueLocked",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "transferAnyERC20Token",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "payaddress",
+				"internalType": "address"
+			},
+			{
+				"type": "address",
+				"name": "tokenAddress",
+				"internalType": "address"
+			},
+			{
+				"type": "uint256",
+				"name": "tokens",
+				"internalType": "uint256"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "transferOwnership",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "newOwner",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "receive",
+		"stateMutability": "payable"
+	}
+]

@@ -1,0 +1,1109 @@
+[
+	{
+		"type": "event",
+		"name": "Cancelled",
+		"inputs": [
+			{
+				"type": "uint256",
+				"name": "timestamp",
+				"internalType": "uint256",
+				"indexed": false
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "Claimed",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "user",
+				"internalType": "address",
+				"indexed": true
+			},
+			{
+				"type": "uint256",
+				"name": "volume",
+				"internalType": "uint256",
+				"indexed": false
+			},
+			{
+				"type": "uint256",
+				"name": "total",
+				"internalType": "uint256",
+				"indexed": false
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "Contributed",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "user",
+				"internalType": "address",
+				"indexed": true
+			},
+			{
+				"type": "uint256",
+				"name": "amount",
+				"internalType": "uint256",
+				"indexed": false
+			},
+			{
+				"type": "uint256",
+				"name": "timestamp",
+				"internalType": "uint256",
+				"indexed": false
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "Finalized",
+		"inputs": [
+			{
+				"type": "uint256",
+				"name": "liquidity",
+				"internalType": "uint256",
+				"indexed": false
+			},
+			{
+				"type": "uint256",
+				"name": "timestamp",
+				"internalType": "uint256",
+				"indexed": false
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "KycUpdated",
+		"inputs": [
+			{
+				"type": "bool",
+				"name": "completed",
+				"internalType": "bool",
+				"indexed": false
+			},
+			{
+				"type": "uint256",
+				"name": "timestamp",
+				"internalType": "uint256",
+				"indexed": false
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "LiquidityWithdrawn",
+		"inputs": [
+			{
+				"type": "uint256",
+				"name": "amount",
+				"internalType": "uint256",
+				"indexed": false
+			},
+			{
+				"type": "uint256",
+				"name": "timestamp",
+				"internalType": "uint256",
+				"indexed": false
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "OwnershipTransferred",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "previousOwner",
+				"internalType": "address",
+				"indexed": true
+			},
+			{
+				"type": "address",
+				"name": "newOwner",
+				"internalType": "address",
+				"indexed": true
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "PoolUpdated",
+		"inputs": [
+			{
+				"type": "uint256",
+				"name": "timestamp",
+				"internalType": "uint256",
+				"indexed": false
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "WithdrawnContribution",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "user",
+				"internalType": "address",
+				"indexed": true
+			},
+			{
+				"type": "uint256",
+				"name": "amount",
+				"internalType": "uint256",
+				"indexed": false
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "MINIMUM_LOCK_DAYS",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint8",
+				"name": "",
+				"internalType": "uint8"
+			}
+		],
+		"name": "VERSION",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "bool",
+				"name": "",
+				"internalType": "bool"
+			}
+		],
+		"name": "audit",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "string",
+				"name": "",
+				"internalType": "string"
+			}
+		],
+		"name": "auditLink",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "bool",
+				"name": "",
+				"internalType": "bool"
+			}
+		],
+		"name": "auditStatus",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "cancel",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "claim",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "claimedOf",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "bool",
+				"name": "",
+				"internalType": "bool"
+			}
+		],
+		"name": "completedKyc",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "payable",
+		"outputs": [],
+		"name": "contribute",
+		"inputs": [
+			{
+				"type": "uint256",
+				"name": "_amount",
+				"internalType": "uint256"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "contributionOf",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "convert",
+		"inputs": [
+			{
+				"type": "uint256",
+				"name": "amountInWei",
+				"internalType": "uint256"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		],
+		"name": "currency",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "emergencyWithdraw",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "to_",
+				"internalType": "address payable"
+			},
+			{
+				"type": "uint256",
+				"name": "amount_",
+				"internalType": "uint256"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "emergencyWithdrawLiquidity",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "token_",
+				"internalType": "address"
+			},
+			{
+				"type": "address",
+				"name": "to_",
+				"internalType": "address"
+			},
+			{
+				"type": "uint256",
+				"name": "amount_",
+				"internalType": "uint256"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "emergencyWithdrawToken",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "payaddress",
+				"internalType": "address"
+			},
+			{
+				"type": "address",
+				"name": "tokenAddress",
+				"internalType": "address"
+			},
+			{
+				"type": "uint256",
+				"name": "tokens",
+				"internalType": "uint256"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "endTime",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		],
+		"name": "factory",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "feesWithdraw",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "finalize",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint8",
+				"name": "",
+				"internalType": "uint8"
+			}
+		],
+		"name": "getDecimal",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			},
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			},
+			{
+				"type": "uint8[]",
+				"name": "",
+				"internalType": "uint8[]"
+			},
+			{
+				"type": "uint256[]",
+				"name": "",
+				"internalType": "uint256[]"
+			},
+			{
+				"type": "string",
+				"name": "",
+				"internalType": "string"
+			},
+			{
+				"type": "string",
+				"name": "",
+				"internalType": "string"
+			},
+			{
+				"type": "string",
+				"name": "",
+				"internalType": "string"
+			}
+		],
+		"name": "getPoolInfo",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "getPrice",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			},
+			{
+				"type": "uint8",
+				"name": "",
+				"internalType": "uint8"
+			},
+			{
+				"type": "bool",
+				"name": "",
+				"internalType": "bool"
+			},
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			},
+			{
+				"type": "string",
+				"name": "",
+				"internalType": "string"
+			}
+		],
+		"name": "getUpdatedState",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		],
+		"name": "governance",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "initialize",
+		"inputs": [
+			{
+				"type": "address[4]",
+				"name": "_addrs",
+				"internalType": "address[4]"
+			},
+			{
+				"type": "uint256[2]",
+				"name": "_capSettings",
+				"internalType": "uint256[2]"
+			},
+			{
+				"type": "uint256[3]",
+				"name": "_timeSettings",
+				"internalType": "uint256[3]"
+			},
+			{
+				"type": "uint256[2]",
+				"name": "_feeSettings",
+				"internalType": "uint256[2]"
+			},
+			{
+				"type": "uint256",
+				"name": "_audit",
+				"internalType": "uint256"
+			},
+			{
+				"type": "uint256",
+				"name": "_kyc",
+				"internalType": "uint256"
+			},
+			{
+				"type": "uint256[2]",
+				"name": "_liquidityPercent",
+				"internalType": "uint256[2]"
+			},
+			{
+				"type": "string",
+				"name": "_poolDetails",
+				"internalType": "string"
+			},
+			{
+				"type": "address[3]",
+				"name": "_linkAddress",
+				"internalType": "address[3]"
+			},
+			{
+				"type": "uint8",
+				"name": "_version",
+				"internalType": "uint8"
+			},
+			{
+				"type": "uint256",
+				"name": "_feesWithdraw",
+				"internalType": "uint256"
+			},
+			{
+				"type": "string[3]",
+				"name": "_otherInfo",
+				"internalType": "string[3]"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "bool",
+				"name": "",
+				"internalType": "bool"
+			}
+		],
+		"name": "kyc",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "string",
+				"name": "",
+				"internalType": "string"
+			}
+		],
+		"name": "kycLink",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "bool",
+				"name": "",
+				"internalType": "bool"
+			}
+		],
+		"name": "kycStatus",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "liquidityBalance",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "liquidityLockDays",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "liquidityPercent",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "liquidityUnlockTime",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		],
+		"name": "owner",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "string",
+				"name": "",
+				"internalType": "string"
+			}
+		],
+		"name": "ownerMail",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "string",
+				"name": "",
+				"internalType": "string"
+			}
+		],
+		"name": "poolDetails",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint8",
+				"name": "",
+				"internalType": "enum FairPool.PoolState"
+			}
+		],
+		"name": "poolState",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint8",
+				"name": "",
+				"internalType": "enum FairPool.PoolType"
+			}
+		],
+		"name": "poolType",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "purchasedOf",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "rate",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "refundType",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "refundedOf",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "renounceOwnership",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		],
+		"name": "router",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "setGovernance",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "governance_",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "setKycAudit",
+		"inputs": [
+			{
+				"type": "bool",
+				"name": "_kyc",
+				"internalType": "bool"
+			},
+			{
+				"type": "bool",
+				"name": "_audit",
+				"internalType": "bool"
+			},
+			{
+				"type": "string",
+				"name": "_kyclink",
+				"internalType": "string"
+			},
+			{
+				"type": "string",
+				"name": "_auditlink",
+				"internalType": "string"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "softCap",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "startTime",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "address",
+				"name": "",
+				"internalType": "address"
+			}
+		],
+		"name": "token",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "totalClaimed",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "totalRaised",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "totalRefunded",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "totalToken",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "totalVolumePurchased",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "transferOwnership",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "newOwner",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "updateCompletedKyc",
+		"inputs": [
+			{
+				"type": "bool",
+				"name": "completed_",
+				"internalType": "bool"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "updatePoolDetails",
+		"inputs": [
+			{
+				"type": "string",
+				"name": "details_",
+				"internalType": "string"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "view",
+		"outputs": [
+			{
+				"type": "uint256",
+				"name": "",
+				"internalType": "uint256"
+			}
+		],
+		"name": "userAvalibleClaim",
+		"inputs": [
+			{
+				"type": "address",
+				"name": "_userAddress",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "withdrawContribution",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "withdrawLeftovers",
+		"inputs": []
+	},
+	{
+		"type": "function",
+		"stateMutability": "nonpayable",
+		"outputs": [],
+		"name": "withdrawLiquidity",
+		"inputs": []
+	},
+	{
+		"type": "receive",
+		"stateMutability": "payable"
+	}
+]
